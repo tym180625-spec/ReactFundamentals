@@ -69,3 +69,10 @@ img {
 .container.dark {
   background-color: black;
 }
+
+.grid {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}

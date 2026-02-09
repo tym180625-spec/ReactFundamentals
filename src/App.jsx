@@ -13,9 +13,37 @@ const toggleTheme = () => {
   setTheme((currentTheme) => (currentTheme === 'light' ? 'dark' : 'light'))
 }
 
+const cards = [
+  {
+    item: "Forest",
+    image: "forestStock.jpg",
+    description: "Wow nice forest",
+    id: 0
+  },
+
+  {
+    item: "Trolley",
+    image: "trolleyStock.jpg",
+    description: "Trolley in the city",
+    id: 1
+  },
+
+  {
+    item: "Island",
+    image: "islandStock.webp",
+    description: "Scenice island",
+    id: 2
+  }
+]
+
   return (
     <div className={`container ${theme}`}>
-      <Card item="Dog" image="forestStock.jpg" description="Wow nice dog"></Card>
+      <div className='grid'>
+        {cards.map((card, index) => (
+        <Card key={card.id} {...card}></Card>
+        ))}
+      </div>
+      
       <button onClick={toggleTheme}>Change Theme</button>
     </div>
   )
